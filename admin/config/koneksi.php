@@ -5,7 +5,10 @@ $server = "localhost";
 $user = "root";
 $password = "";
 $database = "serojapu_pinzy";
+
 include 'tgl_indo.php';
 
 $kon = mysqli_connect($server, $user, $password, $database) or die (mysqli_connect_error());
 ?>
+
+<!-- baru yaa -->

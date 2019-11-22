@@ -41,7 +41,7 @@
       
 
           // menampilkanPelanggan
-          $be = mysqli_query($kon, "SELECT * FROM tb_pelanggan a JOIN tb_area b ON a.id_area=b.id_area  Where b.id_area ='$id_area' order by a.id_pelanggan asc  ");    
+          $be = mysqli_query($kon, "SELECT * FROM tb_pelanggan a JOIN tb_area b ON a.id_area=b.id_area  Where b.id_area ='$id_area' and a.jenis_pelanggan='Y' order by a.id_pelanggan asc  ");    
 					foreach($be as $r){
            $id_pelanggan = $r['id_pelanggan'] 
         ?>

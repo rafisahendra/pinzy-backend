@@ -26,17 +26,17 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Kode Produk</th>
-                    <th>Nama Produk</th>
-                    <th>Kategori</th>
-                    <th>Merek</th>
-                    <th>Kuantitas</th>
-                    <th>Harga Prioritas</th>
-                    <th>Haga Reguler</th>
+                    <th width="3px">No</th>
+                    <th width="3px">Kode Produk</th>
+                    <th width="30px">Nama Produk</th>
+                    <th width="7px">Kategori</th>
+                    <th width="7px">Merek</th>
+                    <th width="5px">Kuantitas</th>
+                    <th width="10px">Harga Prioritas</th>
+                    <th width="10px">Haga Reguler</th>
                    
               
-                    <th width="20%">Aksi</th>
+                    <th width="17%">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -59,27 +59,27 @@
                     <td><?= $r['nama_kategori']?></td>
                     <td><?= $r['nama_brand']?></td>
                       <td><?= $r['kuantitas']?></td>
-                    <td><?= $r['harga_prioritas']?></td>
-                    <td><?= $r['harga_reguler']?></td>
+                    <td>Rp <?=number_format($r['harga_prioritas'],2) ?></td>
+                    <td>Rp <?= number_format($r['harga_reguler'],2)?></td>
                   
            
                     <td>
                         <div style="margin-bottom:5px;">
-                       <button type="button" class=" btn btn-info" data-toggle="modal"
+                       <button type="button" class=" btn btn-info btn-sm" data-toggle="modal"
                         data-target="#myModal<?= $r['id_produk'] ?>"> Detail</button>
-                        <button type="button" class="btn btn-info" data-toggle="modal"
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                         data-target="#myModal2<?= $r['id_produk'] ?>"> Foto</button>
-                        <button type="button" class=" btn btn-info" data-toggle="modal"
-                        data-target="#myModal3<?= $r['id_produk'] ?>"> Spec</button>
+                        <button type="button" class=" btn btn-info btn-sm" data-toggle="modal"
+                        data-target="#myModal3<?= $r['id_produk'] ?> btn-sm"> Spec</button>
                         </div>
                         <div>
                         <a href="?module=produk/aksi&aksi=tambah_stok&id=<?= $r['id_produk'] ?>"
-                        class="fa fa-plus btn btn-primary"> Stok</a>
+                        class="fa fa-plus btn btn-primary btn-sm"> Stok</a>
 
                         <a href="?module=produk/aksi&aksi=edit&id=<?= $r['id_produk'] ?>"
-                          class="fa fa-edit btn btn-warning"></a>
+                          class="fa fa-edit btn btn-warning btn-sm"></a>
                         <a href="?module=produk/aksi&aksi=hapus&id=<?= $r['id_produk']; ?>"
-                          class="fa fa-trash btn btn-danger"></a>
+                          class="fa fa-trash btn btn-danger btn-sm"></a>
                           </div>
 
 
@@ -92,7 +92,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Detail Produk</h4>
-          <button type="button" class="btn btn-success fa fa-reply" data-dismiss="modal">Kembali</button>
+          <button type="button" class="btn btn-success fa fa-reply" data-dismiss="modal"> Kembali</button>
         </div>
 
         <div class="modal-body">
@@ -102,6 +102,16 @@
           </div>
           <div class="col-sm-9">
             <p>: <?= $r['nama_produk']; ?></p>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="col-sm-3">
+            
+            <label for="">kode Produk</label>
+          </div>
+          <div class="col-sm-9">
+            <p>: <?= $r['kode_produk']; ?></p>
           </div>
         </div>
 
@@ -127,7 +137,7 @@
             <label for="">Harga Prioritas</label>
           </div>
           <div class="col-sm-9">
-            <p>: <?= $r['harga_prioritas']; ?></p>
+            <p>: Rp <?= number_format($r['harga_prioritas'],2); ?></p>
           </div>
         </div>
         
@@ -136,7 +146,7 @@
          <label for="">Harga Reguler</label>
           </div>
           <div class="col-sm-9">
-            <p>: <?= $r['harga_reguler']; ?></p>
+            <p>: Rp <?= number_format($r['harga_reguler'],2); ?></p>
           </div>
         </div>
         
@@ -222,15 +232,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Foto Produk</h4>
-          <button type="button" class="btn btn-success fa fa-reply" data-dismiss="modal">Kembali</button>
+          <h4 class="modal-title">Gambar Produk</h4>
+          <button type="button" class="btn btn-success fa fa-reply" data-dismiss="modal"> Kembali</button>
           <a href="?module=produk/edit_foto&aksi=edit&id=<?= $r['id_produk'] ?>"
-                        class="btn btn-warning fa fa-edit">Edit Foto</a>
+                        class="btn btn-warning fa fa-edit"> Edit Foto</a>
         </div>
 
         <div class="modal-body">
         
-            <p>Foto Produk :</p>
+            <p>Foto :</p>
           
           
           <div class="col-sm-12">
@@ -260,7 +270,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Spesifikasi</h4>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
+          <button type="button" class="btn btn-success fa fa-reply" data-dismiss="modal"> Kembali</button>
         </div>
 
         <div class="modal-body">

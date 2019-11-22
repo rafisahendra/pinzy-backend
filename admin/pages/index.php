@@ -123,70 +123,12 @@ if (!$_SESSION['id']) {
             </a>
           </li>
 
-          <!-- <li class="treeview">
-              <a href="#">
-                <i class="fa fa-plus-square"></i>
-                  <span>Input</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-
-                <li>
-                  <a href="?module=produk/aksi&aksi=tambah">
-                    <i class="fa fa-plus-square"></i> <span>Produk</span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="?module=kategori/aksi&aksi=tambah">
-                    <i class="fa fa-plus-square"></i> <span>Kategori</span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="?module=brand/aksi&aksi=tambah">
-                    <i class="fa fa-plus-square"></i> <span>Brand</span>
-                  </a>
-                </li>
-
-
-              </ul>
-            </li> -->
             <li>
                 <a href="?module=produk/view">
                   <i class="fa fa-table"></i> <span>Data</span>
                 </a>
               </li>
-          <!-- <li class="treeview">
-            <a href="#">
-              <i class="fa fa-table"></i>
-              <span>Data</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-
-              <li>
-                <a href="?module=produk/view">
-                  <i class="fa fa-table"></i> <span>Produk</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="?module=kategori/view">
-                  <i class="fa fa-table"></i> <span>Kategori</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="?module=brand/view">
-                  <i class="fa fa-table"></i> <span>Brand</span>
-                </a>
-              </li>
-
-
-            </ul>
-          </li> -->
-
+       
           <li>
             <a href="?module=pelanggan/view">
               <i class="fa fa-table"></i> <span> Pelanggan</span>

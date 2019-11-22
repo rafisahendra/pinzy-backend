@@ -41,9 +41,9 @@
       
 
           // menampilkanPelanggan
-          $be = mysqli_query($kon, "SELECT * FROM tb_pelanggan a JOIN tb_area b ON a.id_area=b.id_area  Where b.id_area ='$id_area' order by a.id_pelanggan asc  ");    
+          $be = mysqli_query($kon, "SELECT * FROM tb_pelanggan a JOIN tb_area b ON a.id_area=b.id_area  Where b.id_area ='$id_area' and a.jenis_pelanggan='T' order by a.id_pelanggan asc  ");    
 					foreach($be as $r){
-           $id_pelanggan = $r['id_pelanggan'] 
+           $id_pelanggan = $r['id_pelanggan'] ;
         ?>
        
                   <tr>
@@ -112,8 +112,8 @@
             <p>: <?= $r['nohp']; ?></p>
           </div>
         </div>
-
-      <form action="">
+       
+      <form method="POST" action="?module=pelanggan/aksi&aksi=konfirmasi&id=<?= $id_pelanggan ?>">
         <div class="modal-body">
           <div class="col-sm-3">
             <p>Jeneis Pelanggan</p>

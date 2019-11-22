@@ -366,6 +366,28 @@
               window.location='index.php?module=sales/view';
             </script>";
     }
+
+
+
+  break;
+  case "konfirmasi" :
+
+  if(isset($_GET['id'])){
+    
+   
+    mysqli_query($kon, " UPDATE tb_pelanggan SET jenis_pelanggan='$_POST[jenis_p]' where id_pelanggan='$_GET[id]'");
+
+      echo "<script>
+               alert('Konfimasi Berhasil');
+               window.location='index.php?module=pelanggan/view';
+            </script>";
+  
+  }  else{
+    echo "<script>
+            alert('Konfirmasi Gagal');
+            window.location='index.php?module=pelanggan/view';
+          </script>";
+  }
 ?>
 <?php
 break;

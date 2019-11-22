@@ -50,7 +50,7 @@
                     <td><?= $no++;?></td>
                     <td><?= $r['nama_sales']?></td>
                     <td><?= $r['nama_area']?></td>
-                    <td><?= $r['tgl_masuk']?></td>
+                    <td><?= kitiang($r['tgl_masuk'])?></td>
                     <td><?= $r['alamat']?></td>
                     <td><?= $r['no_telepon']?></td>
                     <td><?= $r['no_terdekat']?></td>

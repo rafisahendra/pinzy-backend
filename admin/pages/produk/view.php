@@ -28,12 +28,12 @@
                   <tr>
                     <th width="3px">No</th>
                     <th width="3px">Kode Produk</th>
-                    <th width="30px">Nama Produk</th>
+                    <th style=" width:100px;">Nama Produk</th>
                     <th width="7px">Kategori</th>
                     <th width="7px">Merek</th>
-                    <th width="5px">Kuantitas</th>
-                    <th width="10px">Harga Prioritas</th>
-                    <th width="10px">Haga Reguler</th>
+                    <th width="7px">Kuantitas</th>
+                    <th style=" width:80px;">Harga Prioritas</th>
+                    <th style=" width:80px;">Haga Reguler</th>
                    
               
                     <th width="17%">Aksi</th>
@@ -69,8 +69,10 @@
                         data-target="#myModal<?= $r['id_produk'] ?>"> Detail</button>
                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
                         data-target="#myModal2<?= $r['id_produk'] ?>"> Foto</button>
+
                         <button type="button" class=" btn btn-info btn-sm" data-toggle="modal"
-                        data-target="#myModal3<?= $r['id_produk'] ?> btn-sm"> Spec</button>
+                        data-target="#myModal3<?= $r['id_produk'] ?> "> Spec</button>
+
                         </div>
                         <div>
                         <a href="?module=produk/aksi&aksi=tambah_stok&id=<?= $r['id_produk'] ?>"
@@ -149,6 +151,16 @@
             <p>: Rp <?= number_format($r['harga_reguler'],2); ?></p>
           </div>
         </div>
+
+        <div class="modal-body">
+          <div class="col-sm-3">
+         <label for="">Diskon</label>
+          </div>
+          <div class="col-sm-9">
+            <p>:<?= $r['diskon']; ?> %</p>
+          </div>
+        </div>
+        
         
         <div class="modal-body">
           <div class="col-sm-3">

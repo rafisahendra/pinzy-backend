@@ -8,9 +8,8 @@
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
       // masukan data produk terlebih dahulu
-    
-     
-      $save= mysqli_query($kon,"INSERT INTO tb_produk ( nama_produk, id_kategori, kuantitas, harga_prioritas, harga_reguler, merk, tgl_masuk, perusahaan,`rekomendasi`, `flash_sale`, `terjual`, id_area,deskripsi,purna_jual,kode_produk) VALUES ('$_POST[nama_p]','$_POST[kategori]','$_POST[kuantitas]','$_POST[harga_p]','$_POST[harga_r]','$_POST[merk]','$_POST[tgl_masuk]','$_POST[perusahaan]','$_POST[rekomendasi]','$_POST[flash_s]','0','$_POST[area]','$_POST[deskripsi]','$_POST[purna_jual]','$_POST[kode_p]')");
+ 
+      $save= mysqli_query($kon,"INSERT INTO tb_produk ( nama_produk, id_kategori, kuantitas, harga_prioritas, harga_reguler,diskon, merk, tgl_masuk, perusahaan,`rekomendasi`, `flash_sale`, `terjual`, id_area,deskripsi,purna_jual,kode_produk) VALUES ('$_POST[nama_p]','$_POST[kategori]','$_POST[kuantitas]','$_POST[harga_p]','$_POST[harga_r]','$_POST[diskon]','$_POST[merk]','$_POST[tgl_masuk]','$_POST[perusahaan]','$_POST[rekomendasi]','$_POST[flash_s]','0','$_POST[area]','$_POST[deskripsi]','$_POST[purna_jual]','$_POST[kode_p]')");
 
       //ambil id produk dari produk yg diinsert tadi
       $id_produk = mysqli_fetch_array(mysqli_query($kon, "SELECT LAST_INSERT_ID() as id_produk"));
@@ -195,6 +194,11 @@
                   <div class="col-sm-4">
                     <input name="kuantitas" type="number" class="form-control" placeholder="Kuantitas" required>
                   </div>
+
+                    <label for="" class="col-sm-2 control-label">Diskon</label>
+                  <div class="col-sm-4">
+                    <input name="diskon" type="number" class="form-control" placeholder="Diskon " required>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="" class="col-sm-2 control-label" required>Area</label>
@@ -326,7 +330,8 @@
      if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
-      $cekup =  mysqli_query($kon, "UPDATE `tb_produk` SET `nama_produk`='$_POST[nama_p]',`id_kategori`='$_POST[kategori]',`kuantitas`='$_POST[kuantitas]',`harga_prioritas`='$_POST[harga_p]',`harga_reguler`='$_POST[harga_r]',`merk`='$_POST[merk]',`tgl_masuk`='$_POST[tgl_masuk]',`perusahaan`='$_POST[perusahaan]',`rekomendasi`='$_POST[rekomendasi]',`flash_sale`='$_POST[flash_s]',`terjual`='0',`id_area`='$_POST[area]',`deskripsi`='$_POST[deskripsi]',`purna_jual`='$_POST[purna_jual]',`kode_produk`='$_POST[kode_p]' WHERE id_produk='$_GET[id]'");
+
+      $cekup =  mysqli_query($kon, "UPDATE `tb_produk` SET `nama_produk`='$_POST[nama_p]',`id_kategori`='$_POST[kategori]',`kuantitas`='$_POST[kuantitas]',`harga_prioritas`='$_POST[harga_p]',`harga_reguler`='$_POST[harga_r]',diskon='$_POST[diskon]',`merk`='$_POST[merk]',`tgl_masuk`='$_POST[tgl_masuk]',`perusahaan`='$_POST[perusahaan]',`rekomendasi`='$_POST[rekomendasi]',`flash_sale`='$_POST[flash_s]',`terjual`='0',`id_area`='$_POST[area]',`deskripsi`='$_POST[deskripsi]',`purna_jual`='$_POST[purna_jual]',`kode_produk`='$_POST[kode_p]' WHERE id_produk='$_GET[id]'");
 
 		  
      
@@ -459,6 +464,10 @@
                 <div class="col-sm-4">
                   <input name="kuantitas" type="number" class="form-control" value="<?= $data['kuantitas']?>" required>
                 </div>
+                 <label for="" class="col-sm-2 control-label">Diskon</label>
+                  <div class="col-sm-4">
+                    <input name="diskon" type="number" class="form-control" value="<?= $data['diskon']?>" required>
+                  </div>
               </div>
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label" required>Area</label>

@@ -11,4 +11,4 @@ include 'tgl_indo.php';
 $kon = mysqli_connect($server, $user, $password, $database) or die (mysqli_connect_error());
 ?>
 
-<!-- baru yaa -->
+<!-- baru yaa Kitiang-->
